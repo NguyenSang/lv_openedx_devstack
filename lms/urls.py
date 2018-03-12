@@ -1,7 +1,7 @@
 """
 URLs for LMS
 """
-
+from Login_lv import *
 from config_models.views import ConfigurationModelCurrentAPIView
 from django.conf import settings
 from django.conf.urls import include, patterns, url
@@ -33,6 +33,9 @@ urlpatterns = (
     url(r'', include('student.urls')),
     # TODO: Move lms specific student views out of common code
     url(r'^dashboard$', 'student.views.dashboard', name="dashboard"),
+    #sang_test
+    url(r'^signin/(?P<username>[\w\-]+)/$', 'Login_lv.views.signin', name="signin"),
+    #end
     url(r'^change_enrollment$', 'student.views.change_enrollment', name='change_enrollment'),
 
     # Event tracking endpoints

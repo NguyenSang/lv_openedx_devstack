@@ -80,6 +80,8 @@ def parse_args():
     )
 
     edx_args, django_args = parser.parse_known_args()
+    test = 1
+    test2 = test + 1
     if edx_args.help:
         print "edX:"
         print edx_args.help_string
