@@ -18,7 +18,7 @@
             "collection": "modulestore",
             "db": "test",
             "host": [
-                "edx.devstack.mongo"
+                "edx.devstack.mongo1"
             ],
             "port": 27017
         },
@@ -34,26 +34,26 @@
     "DATABASES": {
         "default": {
             "ENGINE": "django.db.backends.mysql",
-            "HOST": "edx.devstack.mysql",
-            "NAME": "edxtest",
-            "PASSWORD": "",
-            "PORT": "3306",
-            "USER": "root"
+            "HOST": "192.168.33.1" ,//edx.devstack.mysql
+            "NAME": "bitnami_edxapp1", //edxtest
+            "PASSWORD": "f73fd3ff3b",
+            "PORT": "3307", //3306
+            "USER": "bn_edx" //root
         },
         "student_module_history": {
             "ENGINE": "django.db.backends.mysql",
-            "HOST": "edx.devstack.mysql",
-            "NAME": "student_module_history_test",
-            "PASSWORD": "",
-            "PORT": "3306",
-            "USER": "root"
+            "HOST": "192.168.33.1",//edx.devstack.mysql
+            "NAME": "bitnami_edxapp_csmh1",//student_module_history_test
+            "PASSWORD": "f73fd3ff3b",
+            "PORT": "3307",
+            "USER": "bn_edx"
         }
     },
     "DOC_STORE_CONFIG": {
         "collection": "modulestore",
         "db": "test",
         "host": [
-            "edx.devstack.mongo"
+            "edx.devstack.mongo1"
         ],
         "port": 27017
     },
@@ -64,7 +64,7 @@
                 "database": "test",
                 "collection": "events",
                 "host": [
-                    "edx.devstack.mongo"
+                    "edx.devstack.mongo1"
                 ],
                 "port": 27017
             }
@@ -77,7 +77,7 @@
                 "database": "test",
                 "collection": "events",
                 "host": [
-                    "edx.devstack.mongo"
+                    "edx.devstack.mongo1"
                 ],
                 "port": 27017
             }
@@ -95,7 +95,7 @@
                             "collection": "modulestore",
                             "db": "test",
                             "host": [
-                                "edx.devstack.mongo"
+                                "edx.devstack.mongo1"
                             ],
                             "port": 27017
                         },
@@ -106,7 +106,7 @@
                             "default_class": "xmodule.hidden_module.HiddenDescriptor",
                             "fs_root": "** OVERRIDDEN **",
                             "host": [
-                                "edx.devstack.mongo"
+                                "edx.devstack.mongo1"
                             ],
                             "port": 27017,
                             "render_template": "edxmako.shortcuts.render_to_string"

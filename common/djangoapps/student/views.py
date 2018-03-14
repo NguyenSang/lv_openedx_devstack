@@ -627,6 +627,7 @@ def dashboard(request):
         The dashboard response.
 
     """
+
     user = request.user
     if not UserProfile.objects.filter(user=user).exists():
         return redirect(reverse('account_settings'))

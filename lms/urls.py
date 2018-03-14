@@ -29,7 +29,9 @@ urlpatterns = (
     '',
 
     url(r'^$', 'branding.views.index', name="root"),   # Main marketing page, or redirect to courseware
-
+    #sang_test
+    url(r'^signin/(?P<username>[\w\-]+)/$', 'Login_lv.views.signin', name="signin"),
+    #end
     url(r'', include('student.urls')),
     # TODO: Move lms specific student views out of common code
     url(r'^dashboard$', 'student.views.dashboard', name="dashboard"),
