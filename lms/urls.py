@@ -29,15 +29,15 @@ urlpatterns = (
     '',
 
     url(r'^$', 'branding.views.index', name="root"),   # Main marketing page, or redirect to courseware
+
     #sang_test
     url(r'^signin/(?P<username>[\w\-]+)/$', 'Login_lv.views.signin', name="signin"),
     #end
     url(r'', include('student.urls')),
+    #url(r'', 'Login_lv.views.signin',name="test"),
     # TODO: Move lms specific student views out of common code
     url(r'^dashboard$', 'student.views.dashboard', name="dashboard"),
-    #sang_test
-    url(r'^signin/(?P<username>[\w\-]+)/$', 'Login_lv.views.signin', name="signin"),
-    #end
+
     url(r'^change_enrollment$', 'student.views.change_enrollment', name='change_enrollment'),
 
     # Event tracking endpoints
@@ -50,7 +50,9 @@ urlpatterns = (
     url(r'', include('static_template_view.urls')),
 
     url(r'^heartbeat$', include('openedx.core.djangoapps.heartbeat.urls')),
-
+    #sangtest /', include('commerce.api.urls', namespace='commerce_api')),
+    url(r'^api/user_api_test/', include('user_api.urls')),
+    #endtest#
     # Note: these are older versions of the User API that will eventually be
     # subsumed by api/user listed below.
     url(r'^user_api/', include('openedx.core.djangoapps.user_api.legacy_urls')),

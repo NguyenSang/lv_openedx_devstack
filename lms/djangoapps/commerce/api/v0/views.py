@@ -1,6 +1,5 @@
 """ API v0 views. """
 import logging
-
 import requests
 from edx_rest_api_client import exceptions
 from opaque_keys import InvalidKeyError
@@ -79,7 +78,6 @@ class BasketsView(APIView):
                 log.exception(
                     'Failed to handle marketing opt-in flag: user="%s", course="%s"', user.username, course_key
                 )
-
     def post(self, request, *args, **kwargs):
         """
         Attempt to create the basket and enroll the user.
